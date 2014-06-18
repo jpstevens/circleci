@@ -24,11 +24,12 @@ Then you can run one of the following methods:
 
 ### getUser()
 API call: ``` GET /me ```
+
 *Provides information about the signed in user.*
 
 #### Example:
 ```javascript
-ci.getUser(function(err, user){
+circleci.getUser(function(err, user){
   if (err) {
     console.log(err);
   } else {
@@ -39,11 +40,12 @@ ci.getUser(function(err, user){
 
 ### getProject()
 API call: ``` GET /projects ```
+
 *List of all the projects you're following on CircleCI, with build information organized by branch.*
 
 #### Example:
 ```javascript
-ci.getProjects(function(err, projects){
+circleci.getProjects(function(err, projects){
   if (err) {
     console.log(err);
   } else {
