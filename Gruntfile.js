@@ -22,9 +22,9 @@ module.exports = function(grunt) {
     },
     clean: ["dist"],
     mochaTest: {
-      feature: {
+      unit: {
         options: {
-          reporter: 'list',
+          reporter: 'spec',
           require: 'coffee-script/register',
           colors: true
         },
@@ -36,13 +36,10 @@ module.exports = function(grunt) {
         files: ['./package.json'],
         updateConfigs: ['pkg'],
         commitFiles: ['./package.json'],
-        pushTo: 'upstream'
+        pushTo: 'origin'
       }
     },
     exec: {
-      echo: {
-        cmd: 'cat package.json'
-      },
       publish: {
         cmd: 'npm publish'
       }
@@ -57,7 +54,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
 
   // deploy
-  grunt.registerTask('deploy', ['test', 'build', 'bump:build', 'exec:echo']);
+  grunt.registerTask('deploy', ['test', 'build', 'bump:build', 'exec:publish']);
 
   // build
   grunt.registerTask('build', ['coffeelint', 'clean', 'coffee']);
