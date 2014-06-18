@@ -1,9 +1,10 @@
 # circleci
 [![Build Status](https://secure.travis-ci.org/jpstevens/circleci.png?branch=master)](https://travis-ci.org/jpstevens/circleci)
+[![Dependencies](https://david-dm.org/jpstevens/circleci.png)](https://david-dm.org/jpstevens/circleci)
 
 A CircleCI client for Node.js.
 
-## Installation:
+## Installation
 
 To install, go to your console/terminal and run:
 
