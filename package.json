@@ -4,7 +4,8 @@
   "description": "A CircleCI client for Node.js",
   "main": "dist/index.js",
   "dependencies": {
-    "qreq": "^0.2.0"
+    "qreq": "^0.2.0",
+    "q": "^1.0.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

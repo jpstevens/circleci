@@ -9,27 +9,11 @@ describe "CircleCI", ->
   before -> mockServer.start(9090)
   after -> mockServer.stop()
 
-  mockServerHost = "http://localhost:9090/api"
+  mockServerHost = "http://localhost:9090"
   ciConfig = null
 
   beforeEach -> ciConfig = { apiToken: "example-api-token", host: mockServerHost }
   afterEach -> ciConfig = null
-
-  describe "#constructor", ->
-
-    it "sets the 'apiToken' property", ->  
-      ci = new CircleCI ciConfig
-      expect(ci.apiToken).to.equal "example-api-token"
-
-    it "sets the 'version' property to 'v1' by default", ->
-      delete ciConfig.version
-      ci = new CircleCI ciConfig
-      expect(ci.version).to.equal "v1"
-
-    it "sets the 'version' property", ->
-      ciConfig.version = "v2"
-      ci = new CircleCI ciConfig
-      expect(ci.version).to.equal "v2"
 
   describe "#init", ->
 
@@ -39,29 +23,34 @@ describe "CircleCI", ->
 
     it "is an alias for 'new CircleCI'"
 
+  describe "#makeRequest", ->
+
+    it "returns a promise object"
+
+    it "executes a callback, with signature (err, resource)"
+
   describe "v1 api", ->
+
+    ci = null
+
+    beforeEach -> ci = new CircleCI ciConfig
+    afterEach -> ci = null
 
     describe "#getUser", ->
 
       expectedUser = require("../mocks/v1/me")
-      ci = null
 
-      beforeEach -> ci = new CircleCI ciConfig
-      afterEach -> ci = null
-
-      it "returns the current user object", ->
+      it "returns the current user object", (done) ->
         ci.getUser (err, user) ->
           expect(user).to.deep.equal expectedUser
+          done()
 
-    describe "#getProject()", ->
+    describe "#getRecentProjects", ->
 
-      expectedProjects = require "../mocks/v1/projects"
-      ci = null
+      expected = require "../mocks/v1/projects"
 
-      beforeEach -> ci = new CircleCI ciConfig
-      afterEach -> ci = null
-
-      it "returns an array of projects", ->
-        ci.getProjects (err, projects) ->
+      it "returns an array of projects", (done) ->
+        ci.getRecentProjects (err, projects) ->
           expect(projects).to.be.instanceof Array
-          expect(projects).to.deep.equal expectedProjects
+          expect(projects).to.deep.equal expected
+          done()

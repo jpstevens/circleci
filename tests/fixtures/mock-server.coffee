@@ -12,7 +12,8 @@ exports.start = (port) ->
   app.use bodyParser()
 
   for version in fs.readdirSync path.resolve(__dirname, "./api")
-    if version.indexOf(".") isnt 0 then app.use '/api', require "./api/#{version}"
+    console.log "> loading #{version}"
+    if version.indexOf(".") isnt 0 then app.use "/api/#{version}", require "./api/#{version}"
 
   server = app.listen app.get('port'), ->
     console.log "CircleCI mock server listening on port #{app.get('port')}"
