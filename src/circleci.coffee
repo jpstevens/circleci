@@ -15,7 +15,7 @@ class CircleCI
   makeRequest: (fn, opts = {}, callback = null) ->
     deferred = q.defer()
     if typeof opts is 'function'
-      callback = opts 
+      callback = opts
       opts = {}
     @mapper
     .getRequestObject(fn, opts)
