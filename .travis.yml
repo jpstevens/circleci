@@ -8,4 +8,4 @@ install:
 before_script:
 - grunt build
 script:
-- grunt test
+- grunt test:unit

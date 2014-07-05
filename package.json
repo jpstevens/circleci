@@ -4,7 +4,7 @@
   "description": "A Node.js client for CircleCI",
   "main": "dist/circleci.js",
   "scripts": {
-    "test": "grunt test:unit"
+    "test": "grunt test"
   },
   "keywords": [
     "circleci",
