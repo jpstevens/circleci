@@ -1,0 +1,44 @@
+{
+  "name": "circleci",
+  "version": "0.1.0",
+  "description": "A Node.js client for CircleCI",
+  "main": "dist/circleci.js",
+  "scripts": {
+    "test": "grunt test:unit"
+  },
+  "keywords": [
+    "circleci",
+    "circle",
+    "ci",
+    "rest",
+    "api",
+    "client"
+  ],
+  "author": "Jack Stevens <jack.stevens@fundingcircle.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpstevens/circleci.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jpstevens/circleci/issues"
+  },
+  "homepage": "https://github.com/jpstevens/circleci",
+  "devDependencies": {
+    "grunt-coffeelint": "0.0.10",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-mocha-test": "^0.11.0",
+    "chai": "^1.9.1",
+    "load-grunt-tasks": "^0.6.0",
+    "coffee-script": "^1.7.1",
+    "sinon": "^1.10.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0"
+  },
+  "dependencies": {
+    "q": "^1.0.1",
+    "request": "^2.36.0"
+  }
+}

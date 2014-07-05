@@ -1,0 +1,50 @@
+{
+  "getUser": {
+    "path": "\/me",
+    "method": "GET"
+  },
+  "getProjects": {
+    "path": "\/projects",
+    "method": "GET"
+  },
+  "getRecentBuilds": {
+    "method": "GET",
+    "path": "\/recent-builds",
+    "options": [
+      "limit",
+      "offset"
+    ]
+  },
+  "getBuilds": {
+    "method": "GET",
+    "path": "\/project\/:username\/:project",
+    "options": [
+      "limit",
+      "offset"
+    ]
+  },
+  "getBuild": {
+    "path": "\/project\/:username\/:project\/:build_num",
+    "method": "GET"
+  },
+  "startBuild": {
+    "path": "\/project\/:username\/:project\/tree\/:branch",
+    "method": "POST"
+  },
+  "cancelBuild": {
+    "path": "\/project\/:username\/:project\/:build_num\/cancel",
+    "method": "POST"
+  },
+  "retryBuild": {
+    "path": "\/project\/:username\/:project\/:build_num\/retry",
+    "method": "POST"
+  },
+  "getBuildArtifacts": {
+    "path": "\/project\/:username\/:project\/:build_num\/artifacts",
+    "method": "GET"
+  },
+  "clearBuildCache": {
+    "path": "\/project\/:username\/:project\/build-cache",
+    "method": "DELETE"
+  }
+}
