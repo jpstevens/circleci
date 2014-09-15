@@ -23,6 +23,14 @@
       "offset"
     ]
   },
+  "getBranchBuilds": {
+    "method": "GET",
+    "path": "\/project\/:username\/:project\/tree\/:branch",
+    "options": [
+      "limit",
+      "offset"
+    ]
+  },
   "getBuild": {
     "path": "\/project\/:username\/:project\/:build_num",
     "method": "GET"
