@@ -4,10 +4,10 @@ describe "clearBuildCache", ->
 
   before ->
     @circleci = new CircleCI { auth: process.env.CIRCLE_TOKEN }
-    @config = { username: "FundingCircle", project: "fc-quatro" }
+    @config = { username: "jpstevens", project: "circleci" }
 
   it "clears the build cache", (done) ->
-    
+
     @circleci.clearBuildCache(@config).then (res) ->
       expect(res).to.be.ok
       done()

@@ -4,8 +4,8 @@ describe "getBuilds", ->
 
   before ->
     @circleci = new CircleCI { auth: process.env.CIRCLE_TOKEN }
-    @config = { username: "FundingCircle", project: "fc-quatro", limit: 1 }
-    
+    @config = { username: "jpstevens", project: "circleci", limit: 1 }
+
   it "returns an array of builds for a given project", (done) ->
 
     @circleci.getBuilds(@config).then (res) ->
