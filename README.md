@@ -243,4 +243,5 @@ ci.clearBuildCache({
 ## Change Log
 
 0.1.0 - Initial (stable) release
+
 0.1.1 - Add `getBranchBuilds` method
