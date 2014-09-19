@@ -10,7 +10,7 @@ describe "cancelBuild", ->
       next()
 
   it "cancels the build", (done) ->
-    
+
     @circleci.cancelBuild(@config).then (res) ->
       expect(res).to.be.ok
       done()
