@@ -21,6 +21,9 @@ class CircleCI
   getBuilds: (opts) ->
     @request.process @routes['getBuilds'], opts
 
+  getBranchBuilds: (opts) ->
+    @request.process @routes['getBranchBuilds'], opts
+
   getBuild: (opts) ->
     @request.process @routes['getBuild'], opts
 

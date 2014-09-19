@@ -93,6 +93,28 @@ ci.getProject({ username: "jpstevens", project: "circleci" })
 - **limit** [optional] - The number of builds to return. Maximum 100, defaults to 30)
 - **offset** [optional] - The API returns builds starting from this offset, defaults to 0)
 
+### getBranchBuilds
+
+Recent builds for a single project filtered by a branch name. Returns the build summary for each of the last 30 builds for a single git repo.
+
+#### Example Usage
+
+```javascript
+ci.getBranchBuilds({ username: "jpstevens", project: "circleci", branch: "master" })
+  .then(function(builds){
+    for(var i=0; i < builds.length; i++) {
+      console.log(builds[i].build_num); // logs the build number for each project
+    }
+  });
+```
+
+#### Options
+- **username** [required] - The username for the project you wish to look up
+- **project** [required] - The project (repo) name you wish to look up
+- **branch** [required] - The branch name you wish to use as filter
+- **limit** [optional] - The number of builds to return. Maximum 100, defaults to 30)
+- **offset** [optional] - The API returns builds starting from this offset, defaults to 0)
+
 ### getBuild
 
 Full details for a single build. The response includes all of the fields from the build summary. This is also the payload for the notification webhooks, in which case this object is the value to a key named 'payload'.
