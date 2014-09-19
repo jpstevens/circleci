@@ -238,3 +238,9 @@ ci.clearBuildCache({
 #### Options
 - **username** [required] - The username for the project you wish to look up
 - **project** [required] - The project (repo) name you wish to look up
+
+
+## Change Log
+
+0.1.0 - Initial (stable) release
+0.1.1 - Add `getBranchBuilds` method
