@@ -1,4 +1,5 @@
 CircleCI = require "../../src/circleci"
+APIHelper = require "../helpers/api-helper"
 
 describe "retryBuild", ->
 
@@ -9,4 +10,4 @@ describe "retryBuild", ->
   it "retries the build", (done) ->
     @circleci.retryBuild(@config).then (res) ->
       expect(res).to.be.ok
-      done()
+      APIHelper.cancelBuild res.build_num, -> done()

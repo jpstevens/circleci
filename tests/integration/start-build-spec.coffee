@@ -1,4 +1,5 @@
 CircleCI = require "../../src/circleci"
+APIHelper = require "../helpers/api-helper"
 
 describe "startBuild", ->
 
@@ -9,4 +10,4 @@ describe "startBuild", ->
   it "starts the build", (done) ->
     @circleci.startBuild(@config).then (res) ->
       expect(res).to.be.ok
-      done()
+      APIHelper.cancelBuild res.build_num, -> done()

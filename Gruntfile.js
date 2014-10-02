@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         },
         src: ['tests/unit/**/*-spec.coffee']
       },
-      feature: {
+      integration: {
         options: {
           timeout: 10000,
           reporter: 'spec',
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             function(){ sinon=require('sinon'); }
           ]
         },
-        src: ['tests/feature/**/*-spec.coffee']
+        src: ['tests/integration/**/*-spec.coffee']
       }
     },
     coffee: {
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 
   // test
   grunt.registerTask('test:unit', 'mochaTest:unit');
-  grunt.registerTask('test:feature', 'mochaTest:feature');
+  grunt.registerTask('test:integration', 'mochaTest:integration');
   grunt.registerTask('test', ['test:unit', 'test:feature']);
 
   // build
