@@ -19,7 +19,7 @@ describe "CircleCI Client", ->
       @circleci.request.process.restore()
 
     describe "getUser", ->
-      
+
       before ->
         @route = { path: "/me", method: "GET" }
 
@@ -27,12 +27,12 @@ describe "CircleCI Client", ->
         @circleci.getUser()
         expect(@processSpy.args[0][0]).to.deep.equal @route
         expect(@processSpy.args[0][1]).to.not.exist
-    
+
     describe "getProjects", ->
 
       before ->
         @route = { path: "/projects", method: "GET" }
-      
+
       it "gets the projects", ->
         @circleci.getProjects()
         expect(@processSpy.args[0][0]).to.deep.equal @route
@@ -43,7 +43,7 @@ describe "CircleCI Client", ->
       before ->
         @route = { path: "/recent-builds", method: "GET", options: ["limit", "offset"] }
         @options = { limit: 10, offset: 100 }
-      
+
       describe "without options", ->
 
         it "gets the recent build", ->
@@ -63,7 +63,7 @@ describe "CircleCI Client", ->
       before ->
         @route = { path: "/project/:username/:project", method: "GET", options: ["limit", "offset"] }
         @options = { username: "jpstevens", project: "circleci", limit: 10, offset: 100 }
-      
+
       it "gets the builds for a project", ->
           @circleci.getBuilds(@options)
           expect(@processSpy.args[0][0]).to.deep.equal @route
@@ -94,7 +94,7 @@ describe "CircleCI Client", ->
       before ->
         @route = { path: "/project/:username/:project/:build_num", method: "GET" }
         @options = { username: "jpstevens", project: "circleci", build_num: 123 }
-      
+
       it "getting a single build for a project", ->
           @circleci.getBuild(@options)
           expect(@processSpy.args[0][0]).to.deep.equal @route
@@ -108,7 +108,7 @@ describe "CircleCI Client", ->
       before ->
         @route = { path: "/project/:username/:project/:build_num/artifacts", method: "GET" }
         @options = { username: "jpstevens", project: "circleci", build_num: 123 }
-      
+
       it "gets the artifacts for a build", ->
           @circleci.getBuildArtifacts(@options)
           expect(@processSpy.args[0][0]).to.deep.equal @route
@@ -122,7 +122,7 @@ describe "CircleCI Client", ->
       before ->
         @route = { path: "/project/:username/:project/:build_num/retry", method: "POST" }
         @options = { username: "jpstevens", project: "circleci", build_num: 123 }
-      
+
       it "retries the build", ->
           @circleci.retryBuild(@options)
           expect(@processSpy.args[0][0]).to.deep.equal @route
@@ -136,7 +136,7 @@ describe "CircleCI Client", ->
       before ->
         @route = { path: "/project/:username/:project/:build_num/cancel", method: "POST" }
         @options = { username: "jpstevens", project: "circleci", build_num: 123 }
-      
+
       it "cancels a build", ->
           @circleci.cancelBuild(@options)
           expect(@processSpy.args[0][0]).to.deep.equal @route
@@ -150,7 +150,7 @@ describe "CircleCI Client", ->
       before ->
         @route = { path: "/project/:username/:project/tree/:branch", method: "POST" }
         @options = { username: "jpstevens", project: "circleci", branch: "master" }
-      
+
       it "starts a build", ->
           @circleci.startBuild(@options)
           expect(@processSpy.args[0][0]).to.deep.equal @route
@@ -164,7 +164,7 @@ describe "CircleCI Client", ->
       before ->
         @route = { path: "/project/:username/:project/build-cache", method: "DELETE" }
         @options = { username: "jpstevens", project: "circleci" }
-      
+
       it "clears the cache for a project", ->
           @circleci.clearBuildCache(@options)
           expect(@processSpy.args[0][0]).to.deep.equal @route

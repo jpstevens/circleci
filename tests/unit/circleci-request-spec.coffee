@@ -3,7 +3,7 @@ q = require "q"
 
 describe "CircleCI Request", ->
 
-  before -> 
+  before ->
     @request = new CircleCIRequest { auth : "example-token" }
 
   describe "handle response", ->
@@ -11,7 +11,7 @@ describe "CircleCI Request", ->
     beforeEach ->
       @deferred = q.defer()
       @handler = @request.handleResponse @deferred
-      
+
     it "passes if there is a successful response", (done) ->
       res = { statusCode: 200, body: true }
       @deferred.promise.then (body) ->
@@ -84,7 +84,7 @@ describe "CircleCI Request", ->
 
     it "builds the expected config object", ->
       expect(@request.buildRequestConfig @route, @data).to.deep.equal @expectedConfig
-      
+
   describe "processing the request", ->
 
     before ->
