@@ -61,7 +61,7 @@ module.exports = function(grunt) {
   // test
   grunt.registerTask('test:unit', 'mochaTest:unit');
   grunt.registerTask('test:integration', 'mochaTest:integration');
-  grunt.registerTask('test', ['test:unit', 'test:feature']);
+  grunt.registerTask('test', ['test:unit', 'test:integration']);
 
   // build
   grunt.registerTask('build', ['clean', 'coffeelint', 'coffee', 'copy']);
