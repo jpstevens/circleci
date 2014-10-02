@@ -8,4 +8,7 @@ install:
 before_script:
 - grunt build
 script:
-- grunt test:unit
+- grunt test
+env:
+  global:
+    secure: Z8erqjVrrwFEa8d8UXcuaTOPlEw/sf5FTEZ0rzZgb3rMdfFikb0EhfQ99WrBvgNEKczEHc0LtrepEr5/A4GCXXdr6Amuj9+Edlg04+cBbrRJwACYoydOpFppiMg718Iq++VxCEReIlRBJLn4VSPbc2l83ylcYmg++ItnCSl/hyo=
