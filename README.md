@@ -2,6 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/jpstevens/circleci.png?branch=master)](https://travis-ci.org/jpstevens/circleci)
 [![Dependencies](https://david-dm.org/jpstevens/circleci.png)](https://david-dm.org/jpstevens/circleci)
+![Downloads/month](http://img.shields.io/npm/dm/circleci.svg)
 
 A Node.js API client for [CircleCI](http://circleci.com)
 
@@ -244,4 +245,4 @@ ci.clearBuildCache({
 
 0.1.0 - Initial (stable) release
 
-0.1.1 - Add `getBranchBuilds` method
+0.2.0 - Add `getBranchBuilds` method
