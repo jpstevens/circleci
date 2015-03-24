@@ -80,7 +80,7 @@ Recent builds for a single project. Returns the build summary for each of the la
 #### Example Usage
 
 ```javascript
-ci.getProject({ username: "jpstevens", project: "circleci" })
+ci.getBuilds({ username: "jpstevens", project: "circleci" })
   .then(function(builds){
     for(var i=0; i < builds.length; i++) {
       console.log(builds[i].build_num); // logs the build number for each project
