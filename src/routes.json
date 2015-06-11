@@ -20,7 +20,8 @@
     "path": "\/project\/:username\/:project",
     "options": [
       "limit",
-      "offset"
+      "offset",
+      "filter"
     ]
   },
   "getBranchBuilds": {
