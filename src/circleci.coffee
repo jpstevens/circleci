@@ -42,4 +42,7 @@ class CircleCI
   clearBuildCache: (opts) ->
     @request.process @routes['clearBuildCache'], opts
 
+  getTestMetadata: (opts) ->
+    @request.process @routes['getTestMetadata'], opts
+    
 module.exports = CircleCI
