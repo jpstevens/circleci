@@ -37,6 +37,8 @@ class CircleCIRequest
     config.url = @buildUrl resource.path, query, data
     # config data
     config.json = true
+    if data and data.body
+      config.body = data.body
     config
 
   buildQueryObject: (availableOptions, data) ->
