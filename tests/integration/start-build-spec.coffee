@@ -22,8 +22,6 @@ describe "startBuild", ->
   it "starts the build", (done) ->
     @circleci.startBuild(@config).then (res) ->
       expect(res).to.be.ok
-      console.log(res)
-      done()
+      APIHelper.cancelBuild res.build_num, -> done()
     .catch (err) ->
       done(err)
-      #APIHelper.cancelBuild res.build_num, -> done()

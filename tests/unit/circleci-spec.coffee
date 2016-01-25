@@ -61,8 +61,8 @@ describe "CircleCI Client", ->
     describe "getBuilds", ->
 
       before ->
-        @route = { path: "/project/:username/:project", method: "GET", options: ["limit", "offset"] }
-        @options = { username: "jpstevens", project: "circleci", limit: 10, offset: 100 }
+        @route = { path: "/project/:username/:project", method: "GET", options: ["limit", "offset", "filter"] }
+        @options = { username: "jpstevens", project: "circleci", limit: 10, offset: 100, filter: 'running' }
 
       it "gets the builds for a project", ->
           @circleci.getBuilds(@options)
@@ -70,7 +70,7 @@ describe "CircleCI Client", ->
           expect(@processSpy.args[0][1]).to.deep.equal @options
 
       it "throws an error when 'username' and 'project' are missing", ->
-        expect(-> @circleci.getProject()).to.throw
+        expect(-> @circleci.getBuilds()).to.throw
 
     describe "getBranchBuilds", ->
 

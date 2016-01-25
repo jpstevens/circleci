@@ -13,6 +13,5 @@ describe "getTestMetadata", ->
 
     @circleci.getTestMetadata(@config).then (res) ->
       expect(res).to.be.ok
-      expect(res).to.be.instanceof Array
-      expect(res.length).to.equal 5
+      expect(res.tests).to.be.instanceof Array
       done()

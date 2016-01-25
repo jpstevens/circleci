@@ -6,7 +6,7 @@ describe "getUser", ->
     @circleci = new CircleCI { auth: process.env.CIRCLE_TOKEN }
 
   it "returns the current user", (done) ->
-    
+
     @circleci.getUser().then (res) ->
       expect(res).to.be.ok
       done()
