@@ -4,7 +4,9 @@ describe "clearBuildCache", ->
 
   before ->
     @circleci = new CircleCI { auth: process.env.CIRCLE_TOKEN }
-    @config = { username: "jpstevens", project: "circleci" }
+    @config =
+      username: process.env.CIRCLE_USER
+      project: process.env.CIRCLE_PROJECT
 
   it "clears the build cache", (done) ->
 

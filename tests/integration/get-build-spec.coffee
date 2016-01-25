@@ -4,7 +4,10 @@ describe "getBuild", ->
 
   before ->
     @circleci = new CircleCI { auth: process.env.CIRCLE_TOKEN }
-    @config = { username: "jpstevens", project: "circleci", build_num: "10" }
+    @config =
+      username: process.env.CIRCLE_USER
+      project: process.env.CIRCLE_PROJECT
+      build_num: "7"
 
   it "returns the build", (done) ->
 

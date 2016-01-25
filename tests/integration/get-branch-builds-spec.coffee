@@ -4,7 +4,11 @@ describe "getBranchBuilds", ->
 
   before ->
     @circleci = new CircleCI { auth: process.env.CIRCLE_TOKEN }
-    @config = { username: "jpstevens", project: "circleci", branch: "master", limit: 1 }
+    @config =
+      username: process.env.CIRCLE_USER
+      project: process.env.CIRCLE_PROJECT
+      branch: "master"
+      limit: 1
 
   it "returns an array of builds for a given project on a branch", (done) ->
 
