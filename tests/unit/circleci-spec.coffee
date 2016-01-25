@@ -173,3 +173,16 @@ describe "CircleCI Client", ->
       it "throws an error when options are missing", ->
         expect(-> @circleci.clearBuildCache()).to.throw
 
+    describe "getTestMetadata", ->
+
+     before ->
+       @route = { path: "/project/:username/:project/:build_num/tests", method: "GET" }
+       @options = { username: "jpstevens", project: "circleci", build_num: 123 }
+
+     it "gets the artifacts for a build", ->
+         @circleci.getTestMetadata(@options)
+         expect(@processSpy.args[0][0]).to.deep.equal @route
+         expect(@processSpy.args[0][1]).to.deep.equal @options
+
+     it "throws an error when options are missing", ->
+       expect(-> @circleci.getTestMetadata()).to.throw
