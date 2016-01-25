@@ -5,14 +5,14 @@ class CircleCIResponse
     @statusCode = res.statusCode
 
   success: () ->
-    @statusCode >= 200 or @statusCode <= 299
+    @statusCode >= 200 and @statusCode <= 299
 
   clientError: () ->
-    if @statusCode >= 400 or @statusCode <= 499
+    if @statusCode >= 400 and @statusCode <= 499
       new Error "HTTP client error #{@statusCode}"
 
   serverError: () ->
-    if @statusCode >= 500 or @statusCode <= 599
+    if @statusCode >= 500 and @statusCode <= 599
       new Error "HTTP server error #{@statusCode}"
 
 module.exports = CircleCIResponse
