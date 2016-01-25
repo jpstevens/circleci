@@ -93,6 +93,7 @@ ci.getBuilds({ username: "jpstevens", project: "circleci" })
 - **project** [required] - The project (repo) name you wish to look up
 - **limit** [optional] - The number of builds to return. Maximum 100, defaults to 30)
 - **offset** [optional] - The API returns builds starting from this offset, defaults to 0)
+- **filter** [optional] - Show only successful/failed/running/pending builds
 
 ### getBranchBuilds
 
@@ -139,7 +140,7 @@ ci.getBuild({
 
 ### startBuild
 
-Triggers a new build, returns a summary of the build. 
+Triggers a new build, returns a summary of the build.
 
 **NOTE:** This client does not *yet* support the sending of [optional build parameters.](https://circleci.com/docs/parameterized-builds)
 
