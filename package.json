@@ -1,10 +1,11 @@
 {
   "name": "circleci",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "description": "A Node.js client for CircleCI",
   "main": "dist/circleci.js",
   "scripts": {
-    "test": "grunt test:unit"
+    "test": "grunt test:unit",
+    "prepublish": "npm test && grunt build"
   },
   "keywords": [
     "circleci",
