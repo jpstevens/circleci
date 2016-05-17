@@ -116,6 +116,7 @@ ci.getBranchBuilds({ username: "jpstevens", project: "circleci", branch: "master
 - **branch** [required] - The branch name you wish to use as filter
 - **limit** [optional] - The number of builds to return. Maximum 100, defaults to 30)
 - **offset** [optional] - The API returns builds starting from this offset, defaults to 0)
+- **filter** [optional] - Show only successful/failed/running/pending builds
 
 ### getBuild
 
