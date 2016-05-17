@@ -29,7 +29,8 @@
     "path": "\/project\/:username\/:project\/tree\/:branch",
     "options": [
       "limit",
-      "offset"
+      "offset",
+      "filter"
     ]
   },
   "getBuild": {
