@@ -75,7 +75,7 @@ describe "CircleCI Client", ->
     describe "getBranchBuilds", ->
 
       before ->
-        @route = { path: "/project/:username/:project/tree/:branch", method: "GET", options: ["limit", "offset"] }
+        @route = { path: "/project/:username/:project/tree/:branch", method: "GET", options: ["limit", "offset", "filter"] }
         @options = { username: "jpstevens", project: "circleci", branch: "master", limit: 10, offset: 100 }
 
       it "gets the builds for a project", ->
