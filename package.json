@@ -1,6 +1,6 @@
 {
   "name": "circleci",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A Node.js client for CircleCI",
   "main": "dist/circleci.js",
   "scripts": {
