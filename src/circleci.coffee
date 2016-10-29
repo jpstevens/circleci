@@ -45,4 +45,16 @@ class CircleCI
   getTestMetadata: (opts) ->
     @request.process @routes['getTestMetadata'], opts
     
+  getEnvVars: (opts) ->
+    @request.process @routes['getEnvVars'], opts
+
+  getEnvVar: (opts) ->
+    @request.process @routes['getEnvVar'], opts
+
+  setEnvVar: (opts) ->
+    @request.process @routes['setEnvVar'], opts
+
+  deleteEnvVar: (opts) ->
+    @request.process @routes['deleteEnvVar'], opts
+
 module.exports = CircleCI

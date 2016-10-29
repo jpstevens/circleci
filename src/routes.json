@@ -60,5 +60,21 @@
   "getTestMetadata": {
     "path": "\/project\/:username\/:project\/:build_num\/tests",
     "method": "GET"
+  },
+  "getEnvVars": {
+    "path": "\/project\/:username\/:project\/envvar",
+    "method": "GET"
+  },
+  "getEnvVar": {
+    "path": "\/project\/:username\/:project\/envvar\/:name",
+    "method": "GET"
+  },
+  "setEnvVar": {
+    "path": "\/project\/:username\/:project\/envvar",
+    "method": "POST"
+  },
+  "deleteEnvVar": {
+    "path": "\/project\/:username\/:project\/envvar\/:name",
+    "method": "DELETE"
   }
 }

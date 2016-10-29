@@ -243,6 +243,94 @@ ci.clearBuildCache({
 - **project** [required] - The project (repo) name you wish to look up
 
 
+### getEnvVars
+
+Get the environment variables for a project
+
+#### Example Usage
+
+```javascript
+ci.getEnvVars({
+  username: "jpstevens",
+  project: "circleci"
+}).then(function(envvars){
+  console.log(envvars); // logs an array of environment variables
+});
+```
+
+#### Options
+- **username** [required] - The username for the project you wish to look up
+- **project** [required] - The project (repo) name you wish to look up
+
+
+### getEnvVar
+
+Get a single environment variable for a project by name
+
+#### Example Usage
+
+```javascript
+ci.getEnvVar({
+  username: "jpstevens",
+  project: "circleci",
+  name: "NPM_TOKEN"
+}).then(function(envvar){
+  console.log(envvar); // logs an object with the environment variable
+});
+```
+
+#### Options
+- **username** [required] - The username for the project you wish to look up
+- **project** [required] - The project (repo) name you wish to look up
+- **name** [required] - The name of the environment variable you wish to look up
+
+
+### setEnvVar
+
+Set a environment variable for a project by name and value
+
+#### Example Usage
+
+```javascript
+ci.setEnvVar({
+  username: "jpstevens",
+  project: "circleci",
+  body: {
+    name: "NPM_TOKEN",
+    value: "123-456-789",
+  }
+}).then(function(envvar){
+  console.log(envvar); // logs an object with the created environment variable
+});
+```
+
+#### Options
+- **username** [required] - The username for the project you wish to add the environment variable to
+- **project** [required] - The project (repo) name you wish to add the environment variable to
+- **body** [required] - Object with the `name` and the `value` of the environment variable you wish to add to the project
+
+### deleteEnvVar
+
+Delete an environment variable from a project by name
+
+#### Example Usage
+
+```javascript
+ci.deleteEnvVar({
+  username: "jpstevens",
+  project: "circleci",
+  name: "NPM_TOKEN"
+}).then(function(envvar){
+  console.log(envvar); // logs an object with status of the deletion
+});
+```
+
+#### Options
+- **username** [required] - The username for the project you wish to delete the environment variable from
+- **project** [required] - The project (repo) name you wish to delete the environment variable from
+- **name** [required] - The name of the environment variable you wish to delete from the project
+
+
 ## Change Log
 
 0.1.0 - Initial (stable) release
