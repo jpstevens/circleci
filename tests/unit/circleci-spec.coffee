@@ -186,3 +186,60 @@ describe "CircleCI Client", ->
 
      it "throws an error when options are missing", ->
        expect(-> @circleci.getTestMetadata()).to.throw
+
+    describe "getEnvVars", ->
+
+     before ->
+       @route = { path: "/project/:username/:project/envvar", method: "GET" }
+       @options = { username: "jpstevens", project: "circleci" }
+
+     it "gets the env vars for a project", ->
+       @circleci.getEnvVars(@options)
+       expect(@processSpy.args[0][0]).to.deep.equal @route
+       expect(@processSpy.args[0][1]).to.deep.equal @options
+
+     it "throws an error when options are missing", ->
+       expect(-> @circleci.getEnvVars()).to.throw
+
+    describe "getEnvVar", ->
+
+     before ->
+       @route = { path: "/project/:username/:project/envvar/:name", method: "GET" }
+       @options = { username: "jpstevens", project: "circleci", name: "NPM_TOKEN" }
+
+     it "gets and env var by name for a project", ->
+       @circleci.getEnvVar(@options)
+       expect(@processSpy.args[0][0]).to.deep.equal @route
+       expect(@processSpy.args[0][1]).to.deep.equal @options
+
+     it "throws an error when options are missing", ->
+       expect(-> @circleci.getEnvVar()).to.throw
+
+    describe "setEnvVar", ->
+
+     before ->
+       @route = { path: "/project/:username/:project/envvar", method: "POST" }
+       @options = { username: "jpstevens", project: "circleci", body: { name: "NPM_TOKEN", value: "123-456-789" } }
+
+     it "sets env var for a project", ->
+       @circleci.setEnvVar(@options)
+       expect(@processSpy.args[0][0]).to.deep.equal @route
+       expect(@processSpy.args[0][1]).to.deep.equal @options
+
+     it "throws an error when options are missing", ->
+       expect(-> @circleci.setEnvVar()).to.throw
+
+    describe "deleteEnvVar", ->
+
+     before ->
+       @route = { path: "/project/:username/:project/envvar/:name", method: "DELETE" }
+       @options = { username: "jpstevens", project: "circleci", name: "NPM_TOKEN" }
+
+     it "sets env var for a project", ->
+       @circleci.deleteEnvVar(@options)
+       expect(@processSpy.args[0][0]).to.deep.equal @route
+       expect(@processSpy.args[0][1]).to.deep.equal @options
+
+     it "throws an error when options are missing", ->
+       expect(-> @circleci.deleteEnvVar()).to.throw
+
