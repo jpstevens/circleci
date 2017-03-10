@@ -143,8 +143,6 @@ ci.getBuild({
 
 Triggers a new build, returns a summary of the build.
 
-**NOTE:** This client does not *yet* support the sending of [optional build parameters.](https://circleci.com/docs/parameterized-builds)
-
 #### Example Usage
 
 ```javascript
