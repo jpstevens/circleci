@@ -161,6 +161,25 @@ ci.startBuild({
 - **username** [required] - The username for the project
 - **project** [required] - The project (repo) name
 - **branch** [required] - The branch you wish to start the build for
+- **options** [optional] - Additional parameters you can pass in
+
+#### Example Usage with additional parameters
+
+```javascript
+ci.startBuild({
+  username: "jpstevens",
+  project: "circleci",
+  branch: "master",
+  body:
+    parallel: null
+    revision: null
+    build_parameters:
+      NODE_ENV: "production"
+      FOO: "bar"
+}).then(function(build){
+  console.log(build);
+});
+```  
 
 ### cancelBuild
 
